@@ -1,0 +1,6 @@
+<!ENTITY calendar-overlay.susbcription.tooltips.add
+ "Nouvel agenda">
+<!ENTITY calendar-overlay.susbcription.tooltips.subscribe
+ "S'inscrire à un agenda">
+<!ENTITY calendar-overlay.susbcription.tooltips.remove
+ "Enlever l'agenda sélectionné">

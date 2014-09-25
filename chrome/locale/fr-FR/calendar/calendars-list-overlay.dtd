@@ -1,0 +1,7 @@
+<!ENTITY calendar.context.properties.label "Modifier">
+<!ENTITY calendar.context.sogo-reload-acls.label "Actualiser les droits d'accès">
+<!ENTITY calendar.context.sogo-acls.label "Partage...">
+<!ENTITY calendar.context.showonly.label "Montrer seulement cet agenda">
+<!ENTITY calendar.context.showall.label "Montrer tous les agendas">
+<!ENTITY calendar.context.sogo-delete.label "Supprimer l'agenda">
+<!ENTITY calendar.context.sogo-unsubscribe.label "Se désabonner de cet agenda">

@@ -1,0 +1,7 @@
+<!ENTITY calendar.context.properties.label "Ändern">
+<!ENTITY calendar.context.sogo-reload-acls.label "Benutzerrechte neu laden">
+<!ENTITY calendar.context.sogo-acls.label "Benutzerrechte...">
+<!ENTITY calendar.context.showonly.label "Nur diesen Kalender zeigen">
+<!ENTITY calendar.context.showall.label "Alle Kalender zeigen">
+<!ENTITY calendar.context.sogo-delete.label "Kalender löschen">
+<!ENTITY calendar.context.sogo-unsubscribe.label "Abonnement für Kalender kündigen">

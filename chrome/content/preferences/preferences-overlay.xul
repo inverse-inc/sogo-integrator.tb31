@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/javascript"
+    src="chrome://sogo-integrator/content/preferences/preferences-overlay.js"/>
+</overlay>

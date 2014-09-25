@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+ Copyright:     Inverse inc., 2007-2009
+ Author:        Wolfgang Sourdeau <wsourdeau@inverse.ca>
+ Email:         support@inverse.ca
+ URL:           http://inverse.ca
+  -->
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/skin/calendar-overlay.css"?>
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/content/calendar/calendar-overlay.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://sogo-integrator/locale/calendar/calendar-overlay.dtd">
+
+<overlay id="inverseCalendarOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+    src="chrome://sogo-integrator/content/calendar/calendar-overlay.js"/>
+
+  <commandset id="calendar_commands">
+    <command id="calendar_create_calendar_command"
+      oncommand="openCalendarCreationDialog()"/>
+    <command id="calendar_subscribe_calendar_command"
+      oncommand="openCalendarSubcriptionDialog()"/>
+    <command id="calendar_unsubscribe_calendar_command"
+      oncommand="openCalendarUnsubscriptionDialog()"/>
+    <command id="calendar_manage_sogo_acls_command"
+      oncommand="manageCalendarACL()"/>
+    <command id="calendar_sogo_showonly_command"
+      oncommand="toggleShowOnlyCalendar()"/>
+    <command id="calendar_sogo_showall_command"
+      oncommand="toggleShowAllCalendars()"/>
+  </commandset>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_integrator_calendar"
+		  src="chrome://sogo-integrator/locale/calendar/calendar-overlay.properties"/>
+  </stringbundleset>
+
+  <modevbox id="calendar-listtree-pane">
+    <hbox id="subscriptionToolbar" insertbefore="calendar-list-tree-widget" collapsed="true">
+      <toolbarbutton id="addCalendarBtn"
+	image="chrome://sogo-integrator/skin/add-calendar.png"
+	command="calendar_create_calendar_command"
+	tooltiptext="&calendar-overlay.susbcription.tooltips.add;"/>
+      <toolbarbutton id="subscribeCalendarBtn"
+	image="chrome://sogo-integrator/skin/add-user-calendar.png"
+	command="calendar_subscribe_calendar_command"
+	tooltiptext="&calendar-overlay.susbcription.tooltips.subscribe;"/>
+      <toolbarbutton id="removeCalendarBtn"
+	image="chrome://sogo-integrator/skin/remove-calendar.png"
+	command="calendar_unsubscribe_calendar_command"
+	tooltiptext="&calendar-overlay.susbcription.tooltips.remove;"/>
+    </hbox>
+  </modevbox>
+</overlay>

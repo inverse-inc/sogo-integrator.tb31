@@ -1,0 +1,6 @@
+<!ENTITY calendar-overlay.susbcription.tooltips.add
+ "Nuovo calendario...">
+<!ENTITY calendar-overlay.susbcription.tooltips.subscribe
+ "Sottoscrivi un calendario...">
+<!ENTITY calendar-overlay.susbcription.tooltips.remove
+ "Rimuovi il calendario selezionato">

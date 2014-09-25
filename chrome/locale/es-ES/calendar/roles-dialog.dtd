@@ -1,0 +1,19 @@
+<!ENTITY roles-dialog.title "Modificar derechos de usuario">
+<!ENTITY roles-dialog.default-roles.label "Derechos por defecto">
+<!ENTITY roles-dialog.user-roles.label "Derechos de usuario para:">
+
+<!ENTITY roles-dialog.roles-choice.view-all.label "Ver todo">
+<!ENTITY roles-dialog.roles-choice.view-d-a-t.label "Ver fecha y hora">
+<!ENTITY roles-dialog.roles-choice.modify.label "Modificar">
+<!ENTITY roles-dialog.roles-choice.respond-to.label "Responder a">
+<!ENTITY roles-dialog.roles-choice.none.label "Ninguno">
+
+<!ENTITY roles-dialog.public.label "Publico">
+<!ENTITY roles-dialog.confidential.label "Confidencial">
+<!ENTITY roles-dialog.private.label "Privado">
+
+<!ENTITY roles-dialog.roles.object-creator.label "Esta persona puede crear objetos en mi calendario.">
+<!ENTITY roles-dialog.roles.object-eraser.label "Esta persona puede eliminar objetos de mi calendario.">
+
+<!ENTITY roles-dialog.update-button.label "Actualizar">
+<!ENTITY roles-dialog.cancel-button.label "Cancelar">

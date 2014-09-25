@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+ Copyright:     Inverse inc., 2007
+ Author:        Wolfgang Sourdeau <wsourdeau@inverse.ca>
+ Email:         support@inverse.ca
+ URL:           http://inverse.ca
+  -->
+
+<!DOCTYPE overlay [
+<!ENTITY % creationOverlayDTD SYSTEM "chrome://sogo-integrator/locale/general/creation-overlay.dtd">
+%creationOverlayDTD;
+]>
+
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/skin/creation-dialog.css"?>
+<?xml-stylesheet type="text/css" href="chrome://global/content/xul.css"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/popup.css"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/textbox.css"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/content/messenger.css"?>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="inverseCreationDialogOverlay">
+  <dialog id="inverseCreationDialog"
+    type="dialog"
+    buttons="none">
+    <script type="application/x-javascript"
+      src="chrome://sogo-integrator/content/general/creation-overlay.js"/>
+    <textbox id="createInput">
+    </textbox>
+    <button id="createButton" label="&creation.button.create.label;"/>
+  </dialog>
+</overlay>

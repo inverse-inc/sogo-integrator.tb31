@@ -1,0 +1,37 @@
+content sogo-integrator chrome/content/
+
+skin    sogo-integrator classic/1.0 chrome/skin/classic/
+
+locale  sogo-integrator en-US chrome/locale/en-US/
+locale	sogo-integrator ca chrome/locale/ca/
+locale  sogo-integrator cs chrome/locale/cs/
+locale  sogo-integrator de-DE chrome/locale/de-DE/
+locale	sogo-integrator es-ES chrome/locale/es-ES/
+locale  sogo-integrator fr-FR chrome/locale/fr-FR/
+locale	sogo-integrator it-IT chrome/locale/it-IT/
+locale	sogo-integrator hu-HU chrome/locale/hu-HU/
+
+overlay chrome://global/content/commonDialog.xul chrome://sogo-integrator/content/global/common-dialog-overlay.xul
+
+overlay chrome://messenger/content/messenger.xul chrome://sogo-integrator/content/messenger/startup-overlay.xul
+
+# replacement of "AddContact", used when clicking on the "star" button, located next to addresses displayed in email headers
+overlay chrome://messenger/content/msgHdrViewOverlay.xul chrome://sogo-integrator/content/headerview-overlay.xul
+overlay chrome://messenger/content/newTagDialog.xul chrome://sogo-integrator/content/newtag-overlay.xul
+
+overlay chrome://messenger/content/addressbook/abNewCardDialog.xul chrome://sogo-integrator/content/addressbook/newcard-overlay.xul
+overlay chrome://messenger/content/addressbook/abMailListDialog.xul chrome://sogo-integrator/content/addressbook/newlist-overlay.xul
+
+overlay chrome://sogo-connector/content/addressbook/addressbook.groupdav.overlay.xul chrome://sogo-integrator/content/addressbook/addressbook-overlay.xul
+overlay chrome://sogo-connector/content/addressbook/preferences.addressbook.groupdav.xul chrome://sogo-integrator/content/addressbook/preferences-overlay.xul
+overlay chrome://sogo-connector/content/addressbook/common-card-overlay.xul chrome://sogo-integrator/content/addressbook/common-card-overlay.xul
+overlay chrome://sogo-connector/content/addressbook/contactspanel-overlay.xul chrome://sogo-integrator/content/addressbook/contactspanel-overlay.xul
+
+overlay	chrome://lightning/content/messenger-overlay-sidebar.xul chrome://sogo-integrator/content/calendar/calendar-overlay.xul
+overlay chrome://calendar/content/calendar-properties-dialog.xul chrome://sogo-integrator/content/calendar/properties-overlay.xul
+overlay chrome://calendar/content/calendar-calendars-list.xul chrome://sogo-integrator/content/calendar/calendars-list-overlay.xul
+overlay chrome://calendar/content/calendar-event-dialog.xul chrome://sogo-integrator/content/calendar/calendar-event-dialog.xul
+overlay chrome://calendar/content/calendar-summary-dialog.xul chrome://sogo-integrator/content/calendar/calendar-summary-dialog.xul
+
+# preferences
+overlay chrome://sogo-connector/content/preferences/preferences-overlay.xul chrome://sogo-integrator/content/preferences/preferences-overlay.xul

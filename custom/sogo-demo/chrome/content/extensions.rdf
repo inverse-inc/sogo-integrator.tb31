@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE RDF>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:isi="http://inverse.ca/sogo-integrator/"
+  xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+  xmlns:NC="http://home.netscape.com/NC-rdf#">
+  <Seq about="http://inverse.ca/sogo-integrator/extensions"
+    isi:updateURL="http://sogo-demo.inverse.ca/plugins/updates.php?plugin=%ITEM_ID%&amp;version=%ITEM_VERSION%&amp;platform=%PLATFORM%">
+    <li>
+      <Description
+        em:id="sogo-integrator@inverse.ca"
+        em:name="SOGo Integrator"/>
+    </li>
+    <li>
+      <Description
+        em:id="sogo-connector@inverse.ca"
+        em:name="SOGo Connector"/>
+    </li>
+<!--
+    <li>
+      <Description
+        em:id="{e2fda1a4-762b-4020-b5ad-a41df1933103}"
+        em:name="Lightning"/>
+    </li>
+-->
+  </Seq>
+</RDF>

@@ -1,0 +1,7 @@
+<!ENTITY calendar.context.properties.label "Modificar">
+<!ENTITY calendar.context.sogo-reload-acls.label "Recarregar drets d'accés">
+<!ENTITY calendar.context.sogo-acls.label "Comparteix...">
+<!ENTITY calendar.context.showonly.label "Mostra només aquest calendari">
+<!ENTITY calendar.context.showall.label "Mostra tots els calendaris">
+<!ENTITY calendar.context.sogo-delete.label "Suprimeix calendari">
+<!ENTITY calendar.context.sogo-unsubscribe.label "Cancel·la la subscripció al calendari">

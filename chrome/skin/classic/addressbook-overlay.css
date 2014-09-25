@@ -1,0 +1,25 @@
+#subscriptionToolbar
+{ height: 36px; }
+
+#addAddressBookBtn
+{
+  list-style-image: url(chrome://sogo-integrator/skin/add-addressbook.png);
+  -moz-box-orient: vertical;
+}
+
+#subscribeAddressBookBtn
+{
+  list-style-image: url(chrome://sogo-integrator/skin/add-user-addressbook.png);
+  -moz-box-orient: vertical;
+}
+
+#removeAddressBookBtn
+{
+  list-style-image: url(chrome://sogo-integrator/skin/remove-addressbook.png);
+  -moz-box-orient: vertical;
+}
+
+#removeAddressBookBtn[disabled="true"]
+{
+  list-style-image: url(chrome://sogo-integrator/skin/remove-addressbook-disabled.png);
+}

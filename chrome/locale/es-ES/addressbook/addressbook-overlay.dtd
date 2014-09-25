@@ -1,0 +1,9 @@
+<!ENTITY addressbook-overlay.acl-menu.label "Compartir...">
+
+<!ENTITY addressbook-overlay.susbcription.tooltips.add
+ "Nueva libreta de direcciones...">
+<!ENTITY addressbook-overlay.susbcription.tooltips.subscribe
+ "Suscribirse a una libreta de direcciones...">
+<!ENTITY addressbook-overlay.susbcription.tooltips.remove
+ "Eliminar la libreta de direcciones seleccionada">
+<!ENTITY addressbook-overlay.subscription.menu.unsubscribe "Desuscribir">

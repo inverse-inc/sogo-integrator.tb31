@@ -1,0 +1,6 @@
+<!ENTITY calendar-overlay.susbcription.tooltips.add
+ "Új naptár...">
+<!ENTITY calendar-overlay.susbcription.tooltips.subscribe
+ "Feliratkozás egy naptárra...">
+<!ENTITY calendar-overlay.susbcription.tooltips.remove
+ "A kijelölt naptár törlése">

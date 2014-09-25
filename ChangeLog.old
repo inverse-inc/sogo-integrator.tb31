@@ -1,0 +1,520 @@
+2013-11-12  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* added the capability to synchronize mail labels from and to
+	  SOGo using DAV requests.
+
+2012-07-10  Jean Raby  <jraby@inverse.ca>
+
+	* chrome/content/calendar/calendar-overlay.js	(openCalendarUnsubscriptionDialog):
+	Re-add calendar deletion function so that the 'Delete Calendar' icon works again.
+
+	* chrome/content/calendar/folder-handler.js: handle
+	"{urn:inverse:params:xml:ns:inverse-dav}calendar-show-alarms".
+
+2012-02-24  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/folder-handler.js
+	(AddressbookHandler.prototype._moveAddressBook): fixed to properly
+	handle the transfer of lists.
+
+2012-02-22  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/preferences/preferences-overlay.js: added code to
+	synchronise classification preferences to server when modified.
+
+	* chrome/content/messenger/folders-update.js (checkFolders):
+	synchronise the classification preferences at launch time.
+
+	* chrome/content/calendar/default-classifications.js: new module
+	that handles synchronisation of the default classification
+	preferences.
+
+2012-02-13  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/calendar/calendar-overlay.js: we now directly
+	override "promptDeleteCalendar", as it may be called from the
+	calendar-list-tree widget, notwithstanding the xul command
+	overlay.
+
+2012-02-10  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/calendar/folder-handler.js
+	(CalendarHandler.prototype.removeHomeCalendar): updated code to
+	handle new-style (guid) ids.
+
+2012-02-09  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/general/subscription-utils.js (escapedUsername):
+	substitutes "+" with "_SP_" as in SOGo 2.
+
+	* chrome/content/calendar/folder-handler.js (addDirectories): the
+	calendar properties must be set BEFORE the calendar registration,
+	due to improvements in Lightning 1.0b3 (vanilla) with regards to
+	instantiation of cached calendars.
+	(_setDirectoryProperties): thanks to the change above, it is no
+	longer required to force a refetch of the calendar ACL entry after
+	modifying its provider class. The mechanism did not work anyway
+	due to other problems.
+
+	* chrome/content/calendar/calendar-overlay.js
+	(managerCalendarACL): force a refresh of the calendar, in order to
+	force a redraw of its associated display blocks and a renewal of
+	their associated events. This futher forces the event acl entries
+	to be refreshed when edited or displayed.
+
+	* chrome/content/calendar/folder-handler.js
+	(CalendarHandler._setDirectoryProperties): restored setting
+	calendars as cached.
+
+	* chrome/content/headerview-overlay.js: new overlay that
+	intercepts card addition and edition (not yet) from the star
+	button in mail header display.
+
+2012-02-08  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/general/subscription-dialog.js: ensure that
+	"response" is not null before processing it, otherwise mark result
+	as void.
+	(onSearchInputBlur, onSearchInputFocus): removed obsolete event
+	handler, since the "search" text fields now handle this properly
+	for us.
+
+	* chrome/content/calendar/roles-dialog.js (onDAVQueryComplete),
+	chrome/content/addressbook/roles-dialog.js (onDAVQueryComplete):
+	ensure that "response" is not null before invoking "indexOf" on it.
+
+	* chrome/content/addressbook/newcard-overlay.js
+	(SIOnNewCardOverlayLoad): adapted to new ab API.
+
+2012-02-07  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/messenger/startup-overlay.js,
+	chrome/content/messenger/update-dialog.js: updated to the new
+	AddonManager API.
+
+	* chrome/content/messenger/folders-update.js: disabled version checks.
+	(checkAvailability): create a new reference to "this" for the
+	callback function.
+
+	* chrome/content/messenger/startup-overlay.js: temporarily
+	disabled update code.
+
+2012-02-06  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/general/subscription-utils.js (subscriptionURL):
+	properly encode the folder url part with encodeURIComponent.
+
+2012-01-12  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/addressbook-overlay.js
+	(SIOnLoadHandler): checkAvailability is now callback based, we
+	therefore must enable the toolbar via a callback function.
+
+2011-12-07  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/calendar/calendars-list-overlay.js
+	(SICalendarListTreeController.isCommandEnabled): directoryChecker
+	is now callback based, when first invoked, provide a proper
+	"yesCallback" and reinvoke the command check to properly enable
+	our custom menus.
+
+	* chrome/content/messenger/folders-update.js:
+	(directoryChecker.checkAvailability) invoke "yesCallback" only
+	when set.
+
+2011-11-30  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/calendar/folder-handler.js
+	(CalendarHandler.addDirectories): pass "true" as value to the new
+	"useCache" parameter to calCalendarManager.registerCalendar.
+
+2011-11-14  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/messenger/folders-update.js
+	(directoryChecker.checkAvailability): made asynchronous to avoid
+	blocking the network thread.
+
+2011-03-08  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/calendar/calendar-overlay.js
+	(openCalendarUnsubscriptionDialog): Fixed typo in function named
+	and included confirmation code from calendar-common-sets.js for
+	unsubscriptions.
+
+	* chrome/content/calendar/calendar-common-sets.{js,xul}: removed
+	obsolete files.
+
+	* chrome/content/general/creation-utils.js
+	(createOperation.onMkColQueryComplete): the display name must be
+	passed through xmlEscape().
+
+2010-11-16  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/folder-handler.js:
+	(AddressbookHandler._moveAddressBook): add cloned versions of the
+	cards to avoid raising their reference count, which otherwise
+	prevents their proper deletion.
+
+2010-11-03  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/folder-handler.js:
+	(AddressbookHandler._moveAddressBook): new method, derived from
+	sogo-connector's previous SCCopyAddressBook method, with added
+	code to remove copied cards.
+	(AddressbookHandler._ensureFolderIsremote): invoke
+	_moveAddressBook so that cards are deleted, even though we
+	expected the addressbook file to be properly deleted instead...
+
+2010-10-29  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/categories.js:
+	(SIContactCategories.synchronizeFromServer): test
+	propstat["prop"][0] to avoid an exception with servers that do not
+	support the "contacts-categories" property.
+
+2010-10-27  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/messenger/folders-update.js: trigger the
+	synchronization of categories at startup.
+
+	* chrome/content/addressbook/categories.js: new helper module
+	providing synchronization methods with the SOGo server for
+	categories.
+
+	* chrome/content/addressbook/common-card-overlay.js: same as below
+	for categories extracted from cards.
+
+	* chrome/content/preferences/preferences-overlay.js: new overlay
+	module for intercepting manipulations on categories and sending
+	the new list of categories to the server when a changed has
+	occurred.
+
+2010-09-21  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/folder-handler.js:
+	(AddressbookHandler.renameDirectories): use the "dirName" ivar
+	rather than "description" for setting the addressbook names.
+
+2010-09-14  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* chrome/content/messenger/startup-overlay.js
+	and chrome/content/messenger/update-dialog.js:
+	Fixed the handling of extensions installation
+
+2010-07-27  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/addressbook/newcard-overlay.js: when the current
+	window is an editing window, gEditCard.selectedAB is not defined.
+
+2010-07-26  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/addressbook/addressbook-overlay.js:
+	(SIAbDeleteDirectory): renamed from "onDeleteAbDirectory". Now
+	takes an URI argument, to match AbDeleteDirectory. The ab's http
+	url is now requested directly via the "serverURL" method.
+
+2010-06-24  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* Initial TB3.1 code
+
+2010-06-14  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/global/common-dialog-overlay.js
+	(_SIGetDialogType): added support for the "smtp" type.
+	(SICommonDialogOnLoad): we reset the "tries" counter to 0 when the
+	dialog has been popped up. We also only pop it up after 2 tries
+	rather than only 1, since two SOGo dialog might popup at the same
+	time.
+	Finally, the checkbox status must be explicitly set to a boolean
+	value.
+
+2010-06-07  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/acl-dialog.js
+	(_appendUserInList): order new items by keeping the special users
+	entries at the end of the list.
+	(onLoad): added code to asynchronously check if "/dav/public" is
+	available before so that we knwo whether the "anonymous" user must
+	be listed or not.
+
+	* chrome/content/sogo-integrator/messenger/folders-update.js:
+	(directoryChecker.foldersFromResponse): we now check the returned
+	objects for the "collection" resource type. If not present, we
+	skip the entry.
+
+	* chrome/content/sogo-integrator/general/acl-dialog.js:
+	(userIDopenRolesWindowForUser): we now longer pass the "isDefault"
+	parameter.
+	(editDefaultEntry): removed obsolete method.
+
+	* chrome/content/sogo-integrator/calendar/roles-dialog.js
+	(onLoad): same as below.
+
+	* chrome/content/sogo-integrator/addressbook/roles-dialog.js
+	(onLoad): we now resize the window when the edited user is the
+	special "anonymous" user. In that case, we also remove the
+	modification rights since there is no case where we would like
+	unauthenticated modification of a calendar.
+
+2010-06-03  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/acl-dialog.js,
+	chrome/content/sogo-integrator/calendar/roles-dialog.js,
+	chrome/content/sogo-integrator/addressbook/roles-dialog.js: added
+	and modified code to handle public access rights as well as the
+	replacement of the "Default Roles" button with the new "Any
+	Authenticated User" user entry.
+
+2010-05-20  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/creation-utils.js:
+	(createFolder): now triggers a timeout that invokes the real
+	create operation, via the "createOperation" handler class.
+
+	* chrome/content/sogo-integrator/general/creation-overlay.js:
+	(_confirmCreation): the creation operation is now performed from
+	the opener window to avoid exceptions with lost XMLHttpRequest
+	references.
+
+	* chrome/content/sogo-integrator/calendar/folder-handler.js:
+	(CalendarHandler._setDirectoryProperties): default values for
+	"suppressAlarms", "showInTodayPane" and "showInvitations" are set
+	on new calendar folders.
+
+2010-04-12  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/calendar-overlay.js:
+	replace the "onclick" handle on the tree object, as what we really
+	want to to is intercept anything causing a calendar to be added or
+	removed outside our code. When catching the "onclick", we have no
+	way of preventing the "mousedown" that triggers the "cyclecell"
+	method from being invoked.
+
+	* chrome/content/sogo-integrator/general/subscription-dialog.js
+	(SubscriptionTreeView._parseUsersNode)
+	(UsersTreeView._parseTreeNodes:): handle the case when the
+	displayName of a returned user is empty.
+
+2019-04-09  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* Added Catalan and es-ES translation - see
+	http://www.scalableogo.org/bugs/view.php?id=448
+	for details.
+
+2010-04-07  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/calendar-overlay.js
+	(calendarListTreeView.onClick): new additional method, designed to
+	catch shift+click on the checkboxes of the calendar list.
+	(toggleShowOnlyCalendarByCal): new method based on
+	toggleShowOnlyCalendar, taking a calendar as parameter.
+
+	* chrome/content/sogo-integrator/messenger/folders-update.js: when
+	widgets are "unhidden", shown them if their persist state is not
+	available.
+
+2010-04-02  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/messenger/startup-overlay.js
+	(checkExtensionsUpdate): new method that check for extensions
+	update and open the update dialog only if an update is found.
+
+2010-03-25  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/subscription-dialog.js
+	(onSubscriptionDialog): the "focus" event must be listened from
+	the searchInput's inputField subelement in order to get caught.
+	This would prevent tabfocus from cleaning the input.
+	(onSearchInputKeyPress): we need to clean gSearchTimer when a
+	search is launched by pressing "enter/return".
+	(userReportTarget.onDAVQueryComplete)
+	(collectionReportTarget.onDAVQueryComplete): we check the
+	content-type of the result as well as its length prior to parse it
+	as an XML document, to avoid exceptions.
+	(userReportTarget.onDAVQueryComplete): a new element attribute
+	("searching") is set to "notfound" when the query returned no
+	result, enabling the setting of visual elements.
+	(onStartSearch): we let the "throbber" spin when a search is
+	performed.
+
+2010-03-23  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/calendar-overlay.js
+	(toggleShowOnlyCalendar): remove all calendars prior to adding the
+	missing one in order to gain a slight performance increase in the
+	rendering of the calendar view.
+
+2010-03-19  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/folder-handler.js
+	We now automatically activate alarms when first adding
+	calendars on calendars that we own.
+
+2010-03-15  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/subscription-dialog.js:
+	"info" field can have multiple lines, which are then splitted and
+	reassembled with a "; " separator.
+
+	* chrome/content/sogo-integrator/messenger/folders-update.js:
+	check that "response" is non-null before processing, for sanity.
+
+2010-03-10  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/properties-overlay.js
+	(onLoadOverlay): we no longer disable the name field as we now
+	permit the "renaming" of subscribed resources.
+
+2009-12-23  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/messenger/folders-update.js
+	(directoryChecker.checkAvailability): new methods that ensures
+	that the corresponding SOGo module is available, by first
+	executing an "OPTIONS" request on the container collection and
+	then caching the result for further invocations.
+	(checkFolders): make use of the new method above before triggering
+	any SOGo-specific setup.
+
+	* chrome/content/sogo-integrator/calendar/calendars-list-overlay.js
+	(isCommandEnabled): make the acl commands unavailable if the
+	"Calendar" module is not available in SOGo.
+
+	* chrome/content/sogo-integrator/addressbook/addressbook-overlay.js
+	(SIOnLoadHandler): collapse the toolbar is the "Contacts" module
+	is not available in SOGo.
+
+2009-11-26  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/calendar-common-sets.js
+	chrome/content/sogo-integrator/calendar/calendar-common-sets.xul:
+	new overlay to override the behavior of the "Delete Calendar"
+	menu option - ie., to correctly differentiate delete vs. unsubscribe
+	* chrome/content/sogo-integrator/calendar/calendars-list-overlay.js
+	We now correctly handle activation / desactivation of the menu
+	items when dealing with local/webdav calendars
+	* Bumped version to v0.98pre1
+
+2009-11-12  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/sogo-config.js (sogoBaseURL):
+	added the ability to specify another prefix than "/SOGo", based on
+	the "sogo-integrator.sogo-prefix" preference.
+
+2009-10-26  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* chrome/content/sogo-integrator/sogo-config.js
+	Added the sogoHostname() function.
+	* chrome/content/sogo-integrator/general/subscription-utils.js
+	Fixing subscription bugs with relative URLs 
+
+2009-10-05  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/subscription-dialog.js
+	(SubscriptionTreeView.toggleOpenState: removed the "filter"
+	element from the query and close the "collection-filter" element
+	to produce a valid XML request. This solves a case were SOGo
+	logged a "malformed <data> element".
+
+2009-07-22  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/messenger/startup-overlay.js:
+	discarded the change below, reenabling the SSL bug work-around.
+
+2009-07-17  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/messenger/startup-overlay.js:
+	certain unavailable calendars may not return an "onLoad" when the
+	network is down. Since the update window is no longer modal, we
+	can redisplay it unconditionnally without fearing a deadlock.
+
+2009-07-15  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	*
+	chrome/content/sogo-integrator/calendar/calendar-summary-dialog.xul:
+	new overlay, displaying the name of the item calendar in the upper
+	right corner.
+
+2009-07-08  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/folder-handler.js: we no
+	longer invoke the acl entry for the added calendars because this
+	would interfere with our version of lightning, that already does
+	that anyway.
+
+2009-07-01  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/folder-handler.js: we
+	invoke the ACL entry for the corresponding calendar from the
+	topmost window through setTimeout so that no XMLRequest error
+	occurs when the calling window is closed.
+
+2009-06-12  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/subscription-dialog.js:
+	prevent users from subscribing twice to a folder they have already
+	subscribed to. Put the current subscriptions in gray.
+
+2009-06-05  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/folder-handler.js: we no
+	longer invoke "calCalendarManager.registerCalendar" since creating
+	a cached calendar will register it automatically.
+
+2009-06-03  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/global/common-dialog-overlay.js:
+	show the username being used to connect.
+
+2009-05-21  Francis Lachapelle  <flachapelle@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/subscription-utils.js: fix
+	a regexp so all special characters of username are properly replaced.
+
+2009-05-21  Wolfgang Sourdeau  <wsourdeau@inverse.ca>
+
+	* chrome/content/sogo-integrator/general/subscription-utils.js: we
+	now escape the username part of the subscription urls in order to
+	avoid display problems with "non-pure" letters+digits usernames.
+
+2009-04-06  Ludovic Marcotte <lmarcotte@inverse.ca>
+
+	* Bumped version number to 0.93
+
+2009-03-26  Ludovic Marcotte <lmarcotte@inverse.ca>
+
+        * chrome/content/sogo-integrator/messenger/update-dialog.js
+	We now use eForceQuit when restarting Thunderbird
+	after an extension update / removal.
+
+2009-02-23  Ludovic Marcotte <lmarcotte@inverse.ca>
+
+	* Added German translation. Patch from
+	Alexander Greiner-Baer <sogo-algb@freenet.de>
+	* Added Italian translation. Patch from
+	Marco Lertora <marco.lertora@infoporto.it>
+
+2009-01-13  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+        * We now offer a Delete Calendar / Unsubscribe From Calendar
+	option from the contextual menu to avoid confusion for users
+
+2008-12-08  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+        * chrome/content/sogo-integrator/calendar/calendar-event-dialog.js
+	We strip the whitespaces when considering the length of the title
+
+2008-12-08  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+	* chrome/content/sogo-integrator/calendar/calendar-event-dialog.js
+	We now warn the user about components w/o a title
+	* We now offer an option to reload ACLs on calendar that we
+	are not the owner and we also load the ACLs immediatly
+	after adding a CalDAV calendar (using the subscribe feature)
+
+2008-12-03  Ludovic Marcotte  <lmarcotte@inverse.ca>
+
+        * Added a new overlay in order to control the
+	visibility of the "Send attendees inviation by email"
+	checkbox from Lightning. You can now show/hide by setting
+	the following preference:
+	sogo-integrator.disable-send-invitations-checkbox

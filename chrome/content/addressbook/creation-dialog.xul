@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+ Copyright:     Inverse inc., 2008
+ Author:        Wolfgang Sourdeau <wsourdeau@inverse.ca>
+ Email:         support@inverse.ca
+ URL:           http://inverse.ca
+  -->
+
+<!DOCTYPE dialog [
+<!ENTITY % creationDTD SYSTEM "chrome://sogo-integrator/locale/addressbook/creation-dialog.dtd">
+%creationDTD;
+]>
+
+<?xul-overlay href="chrome://sogo-integrator/content/general/creation-overlay.xul"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="inverseCreationDialog"
+  title="&creation.title;">
+  <label id="creationLabel">&creation.instructions.label;</label>
+</dialog>

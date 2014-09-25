@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE RDF>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+  xmlns:NC="http://home.netscape.com/NC-rdf#">
+  <Description about="rdf:#$Iwquq2"
+    em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
+    em:minVersion="31.0"
+    em:maxVersion="31.*" />
+  <!-- em:optionsURL="chrome://sogo-integrator/content/general/preferences.xul" -->
+  <Description about="urn:mozilla:install-manifest"
+    em:name="Inverse SOGo Integrator"
+    em:id="sogo-integrator@inverse.ca"
+    em:version="31.0.0"
+    em:description="A SOGo integration plugin for Thunderbird and Lightning"
+    em:iconURL="chrome://sogo-integrator/skin/sogo.png"
+    em:creator="Inverse &lt;support@inverse.ca&gt;"
+    em:developer="Inverse &lt;support@inverse.ca&gt;">
+    <em:targetApplication resource="rdf:#$Iwquq2"/>
+  </Description>
+</RDF>

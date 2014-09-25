@@ -1,0 +1,7 @@
+<!ENTITY calendar.context.properties.label "Upravit">
+<!ENTITY calendar.context.sogo-reload-acls.label "Aktualizovat přístupová práva">
+<!ENTITY calendar.context.sogo-acls.label "Sdílení...">
+<!ENTITY calendar.context.showonly.label "Zobrazit pouze tento kalendář">
+<!ENTITY calendar.context.showall.label "Zobrazit všechny kalendáře">
+<!ENTITY calendar.context.sogo-delete.label "Smazat kalendář">
+<!ENTITY calendar.context.sogo-unsubscribe.label "Odhlásit odebírání kalendáře">

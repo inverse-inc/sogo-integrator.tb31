@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+ Copyright:     Inverse inc., 2007-2009
+ Author:        Wolfgang Sourdeau <wsourdeau@inverse.ca>
+ Email:         support@inverse.ca
+ URL:           http://inverse.ca
+  -->
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://sogo-integrator/locale/calendar/calendars-list-overlay.dtd">
+
+<overlay id="inverseCalendarsListOverlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+    src="chrome://sogo-integrator/content/calendar/calendars-list-overlay.js"/>
+
+  <popup id="list-calendars-context-menu">
+    <menuitem id="list-calendars-context-delete"
+      deletelabel="&calendar.context.sogo-delete.label;"
+      unsubscribelabel="&calendar.context.sogo-unsubscribe.label;"
+      observes="calendar_unsubscribe_calendar_command"/>
+    <!-- oncommand="openCalendarUnsubscriptionDialog();" -->
+    <menuitem id="list-calendars-context-sogo-showonly"
+      label="&calendar.context.showonly.label;"
+      observes="calendar_sogo_showonly_command"/>
+    <menuitem id="list-calendars-context-sogo-showall"
+      label="&calendar.context.showall.label;"
+      observes="calendar_sogo_showall_command"/>
+    <menuitem id="list-calendars-context-sogo-acls"
+      insertafter="list-calendars-context-edit"
+      managelabel="&calendar.context.sogo-acls.label;"
+      reloadlabel="&calendar.context.sogo-reload-acls.label;"
+      observes="calendar_manage_sogo_acls_command"/>
+  </popup>
+</overlay>

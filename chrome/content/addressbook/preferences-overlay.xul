@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+ Copyright:     Inverse inc., 2007-2013
+ Author:        Inverse inc.
+ Email:         support@inverse.ca
+ URL:           http://inverse.ca
+  -->
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/skin/preferences-overlay.css"?>
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/content/addressbook/preferences-overlay.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://sogo-integrator/locale/addressbook/preferences-overlay.dtd">
+
+<overlay id="inverseAddressbookPreferencesOverlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+    src="chrome://sogo-integrator/content/addressbook/preferences-overlay.js"/>
+  <dialog id="ca.inverse.GroupDavAddressBookPreferences"
+    ondialogaccept="return onOverlayAccept();">
+    <stringbundle id="preferencesMessages"
+      src="chrome://sogo-integrator/locale/addressbook/preferences-overlay.properties"/>
+  </dialog>
+</overlay>

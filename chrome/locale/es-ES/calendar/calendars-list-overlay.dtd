@@ -1,0 +1,7 @@
+<!ENTITY calendar.context.properties.label "Modificar">
+<!ENTITY calendar.context.sogo-reload-acls.label "Recargar derechos de acceso">
+<!ENTITY calendar.context.sogo-acls.label "Compartir...">
+<!ENTITY calendar.context.showonly.label "Ver solo este calendario">
+<!ENTITY calendar.context.showall.label "Ver todos los calendarios">
+<!ENTITY calendar.context.sogo-delete.label "Eliminar calendario">
+<!ENTITY calendar.context.sogo-unsubscribe.label "Desuscribirse del calendario">

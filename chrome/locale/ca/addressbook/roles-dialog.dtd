@@ -1,0 +1,11 @@
+<!ENTITY roles-dialog.title "Modificar els drets d'usuari">
+<!ENTITY roles-dialog.default-roles.label "Drets per defecte">
+<!ENTITY roles-dialog.user-roles.label "Drets per a:">
+
+<!ENTITY roles-dialog.roles.object-creator.label "Aquesta persona pot afegix targetes a la llibreta.">
+<!ENTITY roles-dialog.roles.object-viewer.label "Aquesta persona pot llegir targetes de la llibreta.">
+<!ENTITY roles-dialog.roles.object-editor.label "Aquesta persona pot modificar targetes de la llibreta.">
+<!ENTITY roles-dialog.roles.object-eraser.label "Aquesta persona pot suprimir targetes de la llibreta.">
+
+<!ENTITY roles-dialog.update-button.label "Actualitzar">
+<!ENTITY roles-dialog.cancel-button.label "Cancel·lar">

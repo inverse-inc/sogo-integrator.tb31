@@ -1,0 +1,18 @@
+To build :
+
+% make distclean
+% make build=site
+
+For example :
+
+% make build=sogo-demo
+
+
+To activate debugging info, add to site.js :
+
+pref("javascript.options.showInConsole", true);
+pref("nglayout.debug.disable_xul_cache", true);
+pref("browser.dom.window.dump.enabled", true);
+pref("javascript.options.strict", true);
+
+If you want to uninstall a previously installed extension from SOGo's updates.php script, just set its version number to "disabled" in the php script.

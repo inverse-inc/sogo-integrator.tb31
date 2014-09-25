@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+ Copyright:     Inverse inc., 2007
+ Author:        Wolfgang Sourdeau <wsourdeau@inverse.ca>
+ Email:         support@inverse.ca
+ URL:           http://inverse.ca
+  -->
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/skin/addressbook-overlay.css"?>
+<?xml-stylesheet type="text/css" href="chrome://sogo-integrator/content/addressbook/addressbook-overlay.css"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % SIABOverlay SYSTEM "chrome://sogo-integrator/locale/addressbook/addressbook-overlay.dtd" >
+%SIABOverlay;
+<!ENTITY % abMainWindowDTD SYSTEM "chrome://messenger/locale/addressbook/abMainWindow.dtd" >
+%abMainWindowDTD;
+]>
+
+<overlay id="inverseAddressbookOverlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+    src="chrome://sogo-integrator/content/addressbook/addressbook-overlay.js"/>
+  
+  <popup id="dirTreeContext">
+    <menuitem
+      id="dirTreeContext-ABACLDialog"
+      label="&addressbook-overlay.acl-menu.label;"
+      command="cmd_SOGoACLS"/>
+  </popup>
+
+  <commandset id="addressBook">
+    <command id="cmd_SOGoACLS" oncommand="openABACLDialog();"/>
+
+    <command id="addressbook_new_addressbook_command"
+      oncommand="openAbCreationDialog()"/>
+    <command id="addressbook_subscribe_addressbook_command"
+      oncommand="openAbSubscriptionDialog()"/>
+    <command id="addressbook_delete_addressbook_command"
+      oncommand="SIAbDeleteDirectory(gSelectedDir)"/>
+  </commandset>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_integrator_addressbook"
+      src="chrome://sogo-integrator/locale/addressbook/addressbook.properties"/>
+  </stringbundleset>
+
+  <vbox id="dirTreeBox">
+    <sidebarheader id="subscriptionToolbar" insertbefore="dirTree">
+      <toolbarbutton id="addAddressBookBtn"
+	command="addressbook_new_addressbook_command"
+	tooltiptext="&addressbook-overlay.susbcription.tooltips.add;"/>
+      <toolbarbutton id="subscribeAddressBookBtn"
+	command="addressbook_subscribe_addressbook_command"
+	tooltiptext="&addressbook-overlay.susbcription.tooltips.subscribe;"/>
+      <toolbarbutton id="removeAddressBookBtn"
+	command="addressbook_delete_addressbook_command"
+	tooltiptext="&addressbook-overlay.susbcription.tooltips.remove;"/>
+    </sidebarheader>
+  </vbox>
+
+  <menuitem id="dirTreeContext-delete"
+    deletelabel="&deleteCmd.label;"
+    unsubscribelabel="&addressbook-overlay.subscription.menu.unsubscribe;"/>
+</overlay>

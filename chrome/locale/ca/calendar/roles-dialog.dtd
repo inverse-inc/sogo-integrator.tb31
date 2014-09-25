@@ -1,0 +1,19 @@
+<!ENTITY roles-dialog.title "Modificar els drets d'usuari">
+<!ENTITY roles-dialog.default-roles.label "Drets per defecte">
+<!ENTITY roles-dialog.user-roles.label "Drets per a:">
+
+<!ENTITY roles-dialog.roles-choice.view-all.label "Veure tot">
+<!ENTITY roles-dialog.roles-choice.view-d-a-t.label "Veure data i hora">
+<!ENTITY roles-dialog.roles-choice.modify.label "Modificar">
+<!ENTITY roles-dialog.roles-choice.respond-to.label "Respondre a">
+<!ENTITY roles-dialog.roles-choice.none.label "Cap">
+
+<!ENTITY roles-dialog.public.label "Public">
+<!ENTITY roles-dialog.confidential.label "Confidencial">
+<!ENTITY roles-dialog.private.label "Privat">
+
+<!ENTITY roles-dialog.roles.object-creator.label "Aquesta persona pot crear objectes al meu calendari.">
+<!ENTITY roles-dialog.roles.object-eraser.label "Aquesta persona pot eliminar objectes del meu calendari.">
+
+<!ENTITY roles-dialog.update-button.label "Actualitzar">
+<!ENTITY roles-dialog.cancel-button.label "Cancel·lar">

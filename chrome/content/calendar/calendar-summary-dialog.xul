@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+
+<overlay id="SOGoIntegratorCalendarEventOverlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+          src="chrome://sogo-integrator/content/calendar/calendar-summary-dialog.js"/>
+  <dialog id="calendar-summary-dialog">
+    <hbox id="item-calendar-box" insertbefore="item-general-box" flex="1">
+      <spacer flex="1"/>
+      <label style="font-size: smaller" id="calendar-name-label"/>
+    </hbox>
+  </dialog>
+</overlay>

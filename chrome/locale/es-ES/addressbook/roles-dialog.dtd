@@ -1,0 +1,11 @@
+<!ENTITY roles-dialog.title "Modificar los derechos de usuario">
+<!ENTITY roles-dialog.default-roles.label "Derechos por defecto">
+<!ENTITY roles-dialog.user-roles.label "Derechos para:">
+
+<!ENTITY roles-dialog.roles.object-creator.label "Esta persona puede añadir tarjetas a la libreta.">
+<!ENTITY roles-dialog.roles.object-viewer.label "Esta persona puede leer las tarjetas de la libreta.">
+<!ENTITY roles-dialog.roles.object-editor.label "Esta persona puede modificar las tarjetas de la libreta.">
+<!ENTITY roles-dialog.roles.object-eraser.label "Esta persona puede eliminar tarjetas de la libreta.">
+
+<!ENTITY roles-dialog.update-button.label "Actualizar">
+<!ENTITY roles-dialog.cancel-button.label "Cancelar">

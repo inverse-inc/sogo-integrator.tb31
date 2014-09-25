@@ -1,0 +1,64 @@
+31.0.0
+------
+- initial import for Thunderbird 31
+
+24.0.6
+------
+- we now honor "sogo-integrator.disable-send-invitations-checkbox" correctly and in case
+  the "Notify attendees" checkbox is unchecked, we add the "X-SOGo-Send-Appointment-Notifications: NO"
+  key/value pair to avoid sending notifications.
+- we now handle the 200's response content when subscribing to resources to properly honor the name
+  enforced on the server
+
+24.0.5
+------
+- version bump to match SOGo Connector
+
+24.0.4
+------
+- fixed the synchronization of mail tags when creating them from the "New Tag..." popup menu
+
+24.0.1
+------
+- we now synchronize mails labels to and from SOGo
+
+17.0.4
+------
+- updated Czech translation
+
+0.92
+----
+- added the ability to force user preferences by adding a file named "chrome/content/sogo-integrator/content/general/custom-preferences.js"
+- added the ability to remove installed extensions by setting the version number to "disabled" in updates.php (SOGo's update server)
+- we now remove the "home" calendar if it doesn't contain any items
+- accelerated the search of users by resolving their shares only when the corresponding user entry is unfolded
+- added the possibility to show only the selected calendar or all of them
+- we now force immediately the creation of cached CalDAV calendars
+- we now immediately show the full name and email address of the subscribed calendar / address book
+- added the ability to add a custom startup script which will be executed when found in chrome://sogo-integrator/content/general/startup.js
+
+0.81
+----
+- enable the use of the user email address to construct his/her urls to SOGo
+- validate the returned data when syncronising folders to avoid removing existing folders when the server returns an inconsistent response
+- intercept the user password for the "SOGo site" (mail server + SOGo server) and automatically fill the relevant dialogs
+
+0.80
+----
+- fixed some exceptions related to the handling of requests occuring from a closing dialog
+- the calendar colors are now handled
+
+0.67
+----
+- the creation dialog can now be confirmed with "enter"
+
+0.66
+----
+- implemented interfaces to handle ACL on SOGo addressbooks and calendars
+
+0.65
+----
+- disable automatic updates in the default prefs
+- show inline attachments in the default prefs
+- added the ability to create, unsubscribe from and delete SOGo folders
+- added the ability to rename SOGo folders remotely
