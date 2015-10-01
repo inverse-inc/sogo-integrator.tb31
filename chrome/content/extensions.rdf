@@ -6,7 +6,7 @@
   xmlns:NC="http://home.netscape.com/NC-rdf#">
   <!-- Make sure to change the updateURL for your environment --!>
   <Seq about="http://inverse.ca/sogo-integrator/extensions"
-    isi:updateURL="http://sogohostname/path/to/updates.php?plugin=%ITEM_ID%&amp;version=%ITEM_VERSION%&amp;platform=%PLATFORM%">
+    isi:updateURL="http://sogohostname/path/to/updates.php?app_version=%APP_VERSION%&amp;plugin=%ITEM_ID%&amp;version=%ITEM_VERSION%&amp;platform=%PLATFORM%">
 
 <!--  <li>
       <Description

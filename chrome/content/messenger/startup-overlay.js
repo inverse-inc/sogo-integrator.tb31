@@ -27,6 +27,11 @@ let appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
                         .getService(Components.interfaces.nsIXULRuntime);
 let platformId = appInfo.OS + "_" + appInfo.XPCOMABI;
 
+let xulAppInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+    .getService(Components.interfaces.nsIXULAppInfo);
+
+let appVersion = xulAppInfo.version;
+
 function checkExtensionsUpdate() {
     let extensionInfos = getHandledExtensions();
     let extensions = extensionInfos["extensions"];
@@ -96,9 +101,10 @@ function getHandledExtensions() {
     return extensionInfos;
 }
 
-function makeExtensionURL(baseURL, extension) {
-    let replaceDict = { "%ITEM_ID%": escape(extension.id),
-                        "%ITEM_VERSION%": "0.00",
+function makeExtensionURL(baseURL, extension, extensionItem) {
+    let replaceDict = { "%APP_VERSION%": escape (appVersion),
+                        "%ITEM_ID%": escape(extension.id),
+                        "%ITEM_VERSION%": escape(extensionItem ? extensionItem.version : "0.00"),
                         "%PLATFORM%": escape(platformId) };
 
     let url = baseURL;
@@ -124,7 +130,7 @@ function prepareRequiredExtensions(extensionInfos, extensionItems) {
 
     let rdf = iCc["@mozilla.org/rdf/rdf-service;1"].getService(iCi.nsIRDFService);
     for (let i = 0; i < extensions.length; i++) {
-        let url = makeExtensionURL(extensionInfos["updateRDF"], extensions[i]);
+        let url = makeExtensionURL(extensionInfos["updateRDF"], extensions[i], extensionItems[i]);
         let extensionURN = rdf.GetResource("urn:mozilla:extension:" + extensions[i].id);
         let extensionData = getExtensionData(rdf, url, extensionURN);
         if (extensionData) {
