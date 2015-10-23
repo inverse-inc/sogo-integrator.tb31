@@ -34,7 +34,7 @@ function onLoadOverlay() {
 			let calendarName = document.getElementById("calendar-name");
 			originalName = calendarName.value;
 			folderURL = document.getElementById("calendar-uri").value;
-			originalColor = document.getElementById("calendar-color").color;
+			originalColor = document.getElementById("calendar-color").value;
 			originalAlarms = document.getElementById("fire-alarms").checked;
 
 			let hiddenRows;
@@ -102,7 +102,7 @@ function onOverlayAccept() {
 
 	let newFolderURL = document.getElementById("calendar-uri").value;
 	let newName = document.getElementById("calendar-name").value;
-	let newColor = document.getElementById("calendar-color").color;
+	let newColor = document.getElementById("calendar-color").value;
 	let newAlarms = document.getElementById("fire-alarms").checked;
 
 	if (newFolderURL.indexOf(sogoBaseURL()) > -1

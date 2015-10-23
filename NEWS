@@ -1,6 +1,7 @@
 31.0.2
 ------
 - version bump to match SOGo Connector
+- fixed calendar color synchronization (#3353)
 
 31.0.1
 ------
