@@ -2,6 +2,7 @@
 ------
 - version bump to match SOGo Connector
 - fixed calendar color synchronization (#3353)
+- add app_version and item_version in update_url
 
 31.0.1
 ------
