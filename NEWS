@@ -1,3 +1,7 @@
+31.0.3
+------
+- restart TB only if at least one account is defined
+
 31.0.2
 ------
 - version bump to match SOGo Connector
