@@ -151,9 +151,11 @@ function _parseResultNode(node) {
 		for (var i = 0; i < node.childNodes.length; i++) {
 			var key = node.childNodes[i].tagName;
 // 			dump("key: " + key + "\n");
-			var value = node.childNodes[i].firstChild.nodeValue;
-// 			dump("value: " + value + "\n");
-			user[key] = value;
+			if (node.childNodes[i].firstChild) {
+                                var value = node.childNodes[i].firstChild.nodeValue;
+// 			        dump("value: " + value + "\n");
+			        user[key] = value;
+			}
 		}
 		if (user["id"] != "anonymous") {
 			_appendUserInList(user);
