@@ -102,8 +102,8 @@ function SIpromptDeleteCalendar(calendar) {
             }
         }
         else {
-	    let title = calGetString("calendar", "unsubscribeCalendarTitle");
-	    let msg = calGetString("calendar", "unsubscribeCalendarMessage", [calendar.name]);
+	    let title = calGetString("calendar", "removeCalendarButtonUnsubscribe");
+	    let msg = calGetString("calendar", "removeCalendarMessageUnsubscribe", [calendar.name]);
             let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                                           .getService(Components.interfaces.nsIPromptService);
             if (promptService.confirm(window, title, msg, {})) {
