@@ -270,7 +270,7 @@ SubscriptionTreeView.prototype = {
                 let response = responses[i];
                 let href = response.getElementsByTagNameNS("DAV:", "href")[0].childNodes[0].nodeValue;
                 let displayName = response.getElementsByTagNameNS("DAV:", "displayname")[0].childNodes[0].nodeValue;
-                let parenIndex = displayName.indexOf(" (");
+                let parenIndex = displayName.lastIndexOf(" (");
                 if (parenIndex > -1) {
                     displayName = displayName.substr(0, parenIndex);
                 }

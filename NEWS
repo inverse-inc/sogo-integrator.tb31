@@ -2,6 +2,7 @@
 ------
 - make sure a display name is there before using it in the ACL dialog
 - fixed the calendar unsubscribe title/text dialog
+- do not strip parenthesis is folder names
 
 31.0.3
 ------
