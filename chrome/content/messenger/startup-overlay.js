@@ -48,9 +48,11 @@ function checkExtensionsUpdate() {
             }
         }
 
-        let x;
-        AddonManager.getAddonsByIDs([ x.id for each (x in extensions) ],
-                                    checkExtensionsUpdate_callback);
+        let extensions_ids = [];
+        for (let x in extensions) {
+            extensions_ids.push(x.id);
+        }
+        AddonManager.getAddonsByIDs(extensions_ids, checkExtensionsUpdate_callback);
     }
     else {
         checkFolders();

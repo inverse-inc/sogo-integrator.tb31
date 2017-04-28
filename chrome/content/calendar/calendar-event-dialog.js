@@ -6,7 +6,7 @@ function SIOnLoadHandler(event) {
     window.SIOldSaveItem = window.saveItem;
     window.saveItem = window.SISaveItem;
     
-    SIOldOnLoad();
+    //SIOldOnLoad();
 }
 
 function SIOnAccept() {
@@ -71,5 +71,6 @@ function SIUpdateAttendees() {
     }
 }
 
-window.SIOldOnLoad = onLoad;
-window.onLoad = SIOnLoadHandler;
+//window.SIOldOnLoad = onLoad;
+//window.onLoad = SIOnLoadHandler;
+window.addEventListener("load", SIOnLoadHandler, false);

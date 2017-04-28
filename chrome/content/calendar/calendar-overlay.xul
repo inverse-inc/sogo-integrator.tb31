@@ -38,7 +38,7 @@
   </stringbundleset>
 
   <modevbox id="calendar-listtree-pane">
-    <hbox id="subscriptionToolbar" insertbefore="calendar-list-tree-widget" collapsed="true">
+    <hbox id="subscriptionToolbar" insertbefore="calendar-list-tree-widget" collapsed="false">
       <toolbarbutton id="addCalendarBtn"
 	image="chrome://sogo-integrator/skin/add-calendar.png"
 	command="calendar_create_calendar_command"
