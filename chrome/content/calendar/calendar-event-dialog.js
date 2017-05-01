@@ -10,8 +10,17 @@ function SIOnLoadHandler(event) {
 }
 
 function SIOnAccept() {
-    let title = getElementValue("item-title");
+    let title;
+
+    title = "";
     
+    try {
+	title = getElementValue("item-title");
+    }  catch (e) {
+	let iframe = document.getElementById("lightning-item-panel-iframe");
+	title = iframe.contentWindow.document.getElementById("item-title").value;
+    }
+
     if (title.length > 0)
         title = title.replace(/(^\s+|\s+$)/g, "");
     
