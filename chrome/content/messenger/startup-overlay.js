@@ -48,11 +48,7 @@ function checkExtensionsUpdate() {
             }
         }
 
-        let extensions_ids = [];
-        for (let x in extensions) {
-            extensions_ids.push(x.id);
-        }
-        AddonManager.getAddonsByIDs(extensions_ids, checkExtensionsUpdate_callback);
+        AddonManager.getAddonsByIDs(extensions.map(function(x) { return x.id; }), checkExtensionsUpdate_callback);
     }
     else {
         checkFolders();
@@ -84,12 +80,14 @@ function getHandledExtensions() {
                 if (target instanceof iCi.nsIRDFResource) {
                     let extension = {};
                     let id = ds.GetTarget(target, extensionId, true);
-                    if (id instanceof iCi.nsIRDFLiteral)
+                    if (id instanceof iCi.nsIRDFLiteral) {
                         extension.id = id.Value;
+                        //dump("id: " + extension.id + "\n");
+                    }
                     let name = ds.GetTarget(target, extensionName, true);
                     if (name instanceof iCi.nsIRDFLiteral) {
                         extension.name = name.Value;
-                        // 						dump("name: " + extension.name + "\n");
+                        //dump("name: " + extension.name + "\n");
                     }
                     if (extension.id) {
                         extensionInfos["extensions"].push(extension);
