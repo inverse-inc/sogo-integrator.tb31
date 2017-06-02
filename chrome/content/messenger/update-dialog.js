@@ -94,7 +94,7 @@ function restartIfPossible() {
             .getService(Components.interfaces.nsIMsgAccountManager);
     var accounts = accountMgr.accounts;
 
-    if (accounts.Count() && activeInstalls == 0 && activeRemovals == 0) {
+    if (accounts.length && activeInstalls == 0 && activeRemovals == 0) {
         if (errorsHappened) {
             if (window.opener)
                 window.opener.deferredCheckFolders();
