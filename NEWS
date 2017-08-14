@@ -1,3 +1,7 @@
+31.0.6
+------
+- skip invalid folders during folders update startup process 
+
 31.0.5
 ------
 - version bump to match SOGo Connector

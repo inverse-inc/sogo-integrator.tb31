@@ -141,9 +141,10 @@ directoryChecker.prototype = {
     foldersFromResponse: function foldersFromResponse(jsonResponse) {
         let folders = {};
         let username = sogoUserName();
-
         let responses = jsonResponse["multistatus"][0]["response"];
         for (let i = 0; i < responses.length; i++) {
+            if (typeof(responses[i]["href"]) == "undefined")
+                continue;
             let url = this._fixedURL(responses[i]["href"][0]);
             let propstats = responses[i]["propstat"];
             for (let j = 0; j < propstats.length; j++) {
@@ -182,7 +183,6 @@ directoryChecker.prototype = {
         return folders;
     },
     onDAVQueryComplete: function onDAVQueryComplete(status, response) {
-        // dump("status: " + status + "\n");
         if (status > 199 && status < 400) {
             let existing
                 = this.fixedExisting(this.handler.getExistingDirectories());
