@@ -14,10 +14,15 @@ function sogoUserName() {
 		catch(e) {
 			useEmail = false;
 		}
-		if (useEmail)
-			sogoConfig['username'] = mgr.defaultAccount.defaultIdentity.email;
-		else
-			sogoConfig['username'] = mgr.defaultAccount.incomingServer.realUsername;
+		try {
+			if (useEmail)
+				sogoConfig['username'] = mgr.defaultAccount.defaultIdentity.email;
+			else
+				sogoConfig['username'] = mgr.defaultAccount.incomingServer.realUsername;
+		}
+		catch(e) {
+			sogoConfig['username'] = "";
+		}
 	}
 
 	return sogoConfig['username'];

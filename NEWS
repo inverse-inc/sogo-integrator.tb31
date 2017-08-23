@@ -1,6 +1,8 @@
 31.0.6
 ------
 - skip invalid folders during folders update startup process 
+- no longer check if one account is defined before restarting Thunderbird
+- added error handling around getting account's username
 
 31.0.5
 ------

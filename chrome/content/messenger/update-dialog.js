@@ -89,12 +89,7 @@ function downloadMissingExtensions(dlExtensions) {
 }
 
 function restartIfPossible() {
-    var accountMgr =
-            Components.classes["@mozilla.org/messenger/account-manager;1"]
-            .getService(Components.interfaces.nsIMsgAccountManager);
-    var accounts = accountMgr.accounts;
-
-    if (accounts.length && activeInstalls == 0 && activeRemovals == 0) {
+    if (activeInstalls == 0 && activeRemovals == 0) {
         if (errorsHappened) {
             if (window.opener)
                 window.opener.deferredCheckFolders();
